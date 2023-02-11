@@ -13,7 +13,7 @@ value = db.get("key")
 print(value)
 ```
 ---
-create a value:
+create a key:
 ```py
 db.create("key", "value")
 ```
