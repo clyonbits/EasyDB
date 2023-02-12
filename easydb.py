@@ -11,6 +11,6 @@ class EasyDB:
             db_content = db.readlines()
             for line in db_content:
                 if line.split(":")[0] == key:
-                    return line.split(":")[1]
+                    return line.split(":")[1].rstrip()
                 else:
                     return None
