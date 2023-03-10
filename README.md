@@ -7,13 +7,23 @@ from easydb import EasyDB
 db = EasyDB("database")
 ```
 ---
-get a value from key:
+create a key:
+```py
+db.create("key", "value")
+```
+---
+read a value from key:
 ```py
 value = db.read("key")
 print(value)
 ```
 ---
-create a key:
+update a key:
 ```py
-db.create("key", "value")
+db.update("key", "value")
+```
+---
+delete a key:
+```py
+db.delete("key")
 ```
