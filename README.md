@@ -20,7 +20,7 @@ print(value)
 ---
 update a key:
 ```py
-db.update("key", "value")
+db.update("key", "new value")
 ```
 ---
 delete a key:
