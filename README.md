@@ -9,7 +9,7 @@ db = EasyDB("database")
 ---
 get a value from key:
 ```py
-value = db.get("key")
+value = db.read("key")
 print(value)
 ```
 ---

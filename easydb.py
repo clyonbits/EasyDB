@@ -6,7 +6,7 @@ class EasyDB:
     def create(self, key, value):
         with open(self.filename, "w") as db:
             db.write(f"{key}:{value}")
-    def get(self, key):
+    def read(self, key):
         with open(self.filename) as db:
             db_content = db.readlines()
             for line in db_content:
