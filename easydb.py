@@ -10,6 +10,8 @@ class EasyDB:
     
     def read(self, key):
         with open(self.filename, "r") as db:
+            if key == None:
+                return "".join(db.readlines()).rstrip()
             for line in db:
                 if line.split(":")[0] == key:
                     return line.split(":")[1].strip()
