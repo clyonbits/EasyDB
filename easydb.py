@@ -37,3 +37,10 @@ class EasyDB:
                 lines.remove(line)
         with open(self.filename, "w") as db:
             db.write("".join(lines))
+
+    def index(self, key):
+        with open(self.filename, "r") as db:
+            lines = db.readlines()
+            for element in lines:
+                if element.startswith(key):
+                    return lines.index(element)
