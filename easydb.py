@@ -10,7 +10,7 @@ class EasyDB:
     
     def read(self, key):
         with open(self.filename, "r") as db:
-            if key == "all":
+            if key == None:
                 return "".join(db.readlines()).rstrip()
             for line in db:
                 if line.split(":")[0] == key:
@@ -41,7 +41,7 @@ class EasyDB:
     def index(self, key):
         with open(self.filename, "r") as db:
             lines = db.readlines()
-            if key == "all":
+            if key == None:
                 return len(lines)
             for element in lines:
                 if element.startswith(key):
