@@ -1,3 +1,4 @@
+EXTENSION = "easydb"
 class EasyDB:
     def __init__(self, name):
         self.name = name
