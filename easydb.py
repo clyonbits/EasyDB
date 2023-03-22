@@ -1,4 +1,3 @@
-EXTENSION = "easydb"
 class EasyDB:
     def __init__(self, name):
         self.name = name
@@ -8,9 +7,9 @@ class EasyDB:
         with open(self.filename, "a") as db:
             db.write(f"{key}:{value}\n")
     
-    def read(self, key):
+    def read(self, key=None):
         with open(self.filename, "r") as db:
-            if key == None:
+            if key is None:
                 return "".join(db.readlines()).rstrip()
             for line in db:
                 if line.split(":")[0] == key:
@@ -38,11 +37,20 @@ class EasyDB:
         with open(self.filename, "w") as db:
             db.write("".join(lines))
 
-    def index(self, key):
+    def get_index_by_key(self, key):
         with open(self.filename, "r") as db:
             lines = db.readlines()
-            if key == None:
-                return len(lines)
-            for element in lines:
+            for index, element in enumerate(lines):
                 if element.startswith(key):
-                    return lines.index(element)
+                    return index
+        return None
+
+    def get_key_by_index(self, index):
+        with open(self.filename, "r") as db:
+            lines = db.readlines()
+            line = lines[index]
+            return line.split(":")[0]
+
+    def get_elements_length(self):
+        with open(self.filename, "r") as db:
+            return len(db.readlines())
